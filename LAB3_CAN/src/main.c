@@ -63,16 +63,16 @@ int main(void) {
 		if(CANTxReady(0))
 		{
 			msg[0]=0;
-			msg[1]=100;
-			msg[2]=100;
+			msg[1]=0;
+			msg[2]=0;
 			msg[3]=0;
-			msg[4]=100;
-			msg[5]=0x06;
-			msg[6]=0x07;
-			msg[7]=50;
+			msg[4]=0;
+			msg[5]=0;
+			msg[6]=0;
+			msg[7]=100;
 			// Channel, Identifier (max 0x1fffffff (29 bits)), Message, Number of bytes, R //or 0 (Remote frame or no remote frame).
-			CANSendMsg( 0, 0x01, msg, 8, 0 );
-			delay_ms(1000);
+			//CANSendMsg( 0, 0x0CFE6CEE, msg, 8, 0 );
+			delay_ms(100);
 		}
 	}
 	return 0;
